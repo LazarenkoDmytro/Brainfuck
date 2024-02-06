@@ -18,7 +18,7 @@ public class MutableIntTest {
     }
 
     @Test
-    void testExecute() {
+    void testIncrement() {
         assertEquals(0, mutableInt.value());
 
         mutableInt.increment();

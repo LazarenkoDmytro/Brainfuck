@@ -19,8 +19,8 @@ public class PrintCurrentCellParserTest {
     @BeforeEach
     void setUp() {
         printCurrentCellParser = new PrintCurrentCellParser();
-        brainfuckExpression = "><+-.[]";
-        mutableInt = new MutableInt(4);
+        brainfuckExpression = "[><+-.]";
+        mutableInt = new MutableInt(5);
     }
 
     @Test

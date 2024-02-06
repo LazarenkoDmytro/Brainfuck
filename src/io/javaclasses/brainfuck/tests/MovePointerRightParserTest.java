@@ -19,8 +19,8 @@ public class MovePointerRightParserTest {
     @BeforeEach
     void setUp() {
         movePointerRightParser = new MovePointerRightParser();
-        brainfuckExpression = "><+-";
-        mutableInt = new MutableInt(0);
+        brainfuckExpression = "[><+-.]";
+        mutableInt = new MutableInt(1);
     }
 
     @Test
