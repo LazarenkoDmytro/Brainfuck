@@ -19,8 +19,8 @@ public class IncrementCurrentCellParserTest {
     @BeforeEach
     void setUp() {
         incrementCurrentCellParser = new IncrementCurrentCellParser();
-        brainfuckExpression = "><+-";
-        mutableInt = new MutableInt(2);
+        brainfuckExpression = "[><+-.]";
+        mutableInt = new MutableInt(3);
     }
 
     @Test

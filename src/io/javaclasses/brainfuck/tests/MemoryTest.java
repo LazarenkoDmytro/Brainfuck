@@ -4,6 +4,9 @@ import io.javaclasses.brainfuck.classes.Memory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -65,12 +68,29 @@ class MemoryTest {
 
     @Test
     void testPrintCurrentCell() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+
+        setUpStreams(outContent);
+
         for (byte i = 0; i < 'A'; i++) {
             memory.incrementCurrentCell();
         }
-        memory.printCurrentCell(); // 'A' expected in the console
+        memory.printCurrentCell();
+        assertEquals("A\n", outContent.toString());
 
         memory.incrementCurrentCell();
-        memory.printCurrentCell(); // 'B' expected in the console
+        memory.printCurrentCell();
+        assertEquals("A\nB\n", outContent.toString());
+
+        restoreStreams(originalOut);
+    }
+
+    public void setUpStreams(ByteArrayOutputStream outContent) {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    public void restoreStreams(PrintStream originalOut) {
+        System.setOut(originalOut);
     }
 }

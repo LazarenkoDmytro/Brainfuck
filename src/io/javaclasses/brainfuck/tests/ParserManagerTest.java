@@ -18,7 +18,7 @@ public class ParserManagerTest {
     }
 
     @Test
-    void testExecute() {
+    void testParser() {
         assertInstanceOf(MovePointerRightParser.class, parserManager.parser('>'));
         assertInstanceOf(MovePointerLeftParser.class, parserManager.parser('<'));
         assertInstanceOf(IncrementCurrentCellParser.class, parserManager.parser('+'));

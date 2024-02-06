@@ -32,11 +32,7 @@ public class LoopParserTest {
         Loop loop = (Loop) command;
         List<Command> innerCommands = loop.innerCommands();
 
-        assertInstanceOf(MovePointerRight.class, innerCommands.get(0));
-        assertInstanceOf(MovePointerLeft.class, innerCommands.get(1));
-        assertInstanceOf(IncrementCurrentCell.class, innerCommands.get(2));
-        assertInstanceOf(DecrementCurrentCell.class, innerCommands.get(3));
-        assertInstanceOf(PrintCurrentCell.class, innerCommands.get(4));
+        BrainfuckParserTest.testCommands(innerCommands);
 
         assertEquals(5, innerCommands.size());
     }
