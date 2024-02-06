@@ -7,13 +7,9 @@ import java.util.List;
  * Implements the {@link Command} interface.
  * Executes a series of commands repeatedly.
  */
-public class Loop implements Command {
-    private final List<Command> innerCommands;
-
-    public Loop(List<Command> innerCommands) {
+public record Loop(List<Command> innerCommands) implements Command {
+    public Loop {
         assert (innerCommands != null && !innerCommands.isEmpty());
-
-        this.innerCommands = innerCommands;
     }
 
     @Override
