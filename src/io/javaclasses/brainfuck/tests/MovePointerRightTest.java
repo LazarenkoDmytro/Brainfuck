@@ -22,10 +22,12 @@ class MovePointerRightTest {
 
     @Test
     void testExecute() {
-        movePointerRight.execute(memory);
-        assertEquals(1, memory.currentPointer());
+        for (int i = 0; i < 9; i++) {
+            movePointerRight.execute(memory);
+        }
+        assertEquals(9, memory.currentPointer());
 
         movePointerRight.execute(memory);
-        assertEquals(2, memory.currentPointer());
+        assertEquals(0, memory.currentPointer());
     }
 }
