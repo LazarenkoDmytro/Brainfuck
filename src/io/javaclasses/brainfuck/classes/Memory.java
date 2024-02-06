@@ -57,6 +57,6 @@ public class Memory {
     }
 
     public void printCurrentCell() {
-        System.out.println((char) cells[pointer]);
+        System.out.print((char) cells[pointer]);
     }
 }

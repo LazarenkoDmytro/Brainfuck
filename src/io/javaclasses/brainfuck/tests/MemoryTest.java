@@ -77,11 +77,11 @@ class MemoryTest {
             memory.incrementCurrentCell();
         }
         memory.printCurrentCell();
-        assertEquals("A\n", outContent.toString());
+        assertEquals("A", outContent.toString());
 
         memory.incrementCurrentCell();
         memory.printCurrentCell();
-        assertEquals("A\nB\n", outContent.toString());
+        assertEquals("AB", outContent.toString());
 
         restoreStreams(originalOut);
     }

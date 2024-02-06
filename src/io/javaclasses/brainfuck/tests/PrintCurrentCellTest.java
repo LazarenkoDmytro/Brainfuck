@@ -37,11 +37,11 @@ class PrintCurrentCellTest {
             incrementCurrentCell.execute(memory);
         }
         printCurrentCell.execute(memory);
-        assertEquals("A\n", outContent.toString());
+        assertEquals("A", outContent.toString());
 
         incrementCurrentCell.execute(memory);
         printCurrentCell.execute(memory);
-        assertEquals("A\nB\n", outContent.toString());
+        assertEquals("AB", outContent.toString());
 
         restoreStreams(originalOut);
     }
