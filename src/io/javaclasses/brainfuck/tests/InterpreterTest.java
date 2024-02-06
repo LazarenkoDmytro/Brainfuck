@@ -35,6 +35,12 @@ public class InterpreterTest {
         restoreStreams(originalOut);
     }
 
+    @Test
+    void test() {
+        String brainfuckExpression = "{++.}";
+        interpreter.interpret(brainfuckExpression);
+    }
+
     public void setUpStreams(ByteArrayOutputStream outContent) {
         System.setOut(new PrintStream(outContent));
     }
