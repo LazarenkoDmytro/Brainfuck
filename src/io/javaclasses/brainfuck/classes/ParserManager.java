@@ -15,6 +15,7 @@ public class ParserManager {
             put('-', new DecrementCurrentCellParser());
             put('.', new PrintCurrentCellParser());
             put('[', new LoopParser());
+            put('{', new IfParser());
         }
     };
 
