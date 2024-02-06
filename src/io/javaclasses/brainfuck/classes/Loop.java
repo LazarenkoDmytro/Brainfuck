@@ -10,8 +10,10 @@ import java.util.List;
 public class Loop implements Command {
     private final List<Command> innerCommands;
 
-    public Loop(List<Command> commands) {
-        this.innerCommands = commands;
+    public Loop(List<Command> innerCommands) {
+        assert (innerCommands != null && !innerCommands.isEmpty());
+
+        this.innerCommands = innerCommands;
     }
 
     @Override
