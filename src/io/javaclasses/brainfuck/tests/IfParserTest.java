@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 /**
  * Tests the logic of the {@link IfParser} class.
  */
-public class IfParserTest {
+public final class IfParserTest {
     private IfParser ifParser;
     private String brainfuckExpression;
     private MutableInt mutableInt;

@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link IncrementCurrentCell} class.
  */
-public class IncrementCurrentCellTest {
+public final class IncrementCurrentCellTest {
     private Memory memory;
     private IncrementCurrentCell incrementCurrentCell;
 

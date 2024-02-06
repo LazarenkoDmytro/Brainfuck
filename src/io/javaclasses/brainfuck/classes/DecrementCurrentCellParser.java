@@ -5,7 +5,7 @@ package io.javaclasses.brainfuck.classes;
  * Implements the {@link Parser} interface.
  * Parses the DecrementCurrentCell symbol.
  */
-public class DecrementCurrentCellParser implements Parser {
+public final class DecrementCurrentCellParser implements Parser {
     @Override
     public Command parse(String brainfuckExpression, MutableInt index) {
         return new DecrementCurrentCell();

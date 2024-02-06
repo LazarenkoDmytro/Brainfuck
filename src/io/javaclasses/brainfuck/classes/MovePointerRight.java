@@ -5,7 +5,7 @@ package io.javaclasses.brainfuck.classes;
  * Implements the {@link Command} interface.
  * Moves the pointer of the memory to the right.
  */
-public class MovePointerRight implements Command {
+public final class MovePointerRight implements Command {
     @Override
     public void execute(Memory memory) {
         memory.movePointerRight();

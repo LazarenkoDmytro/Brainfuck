@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * The general structure, that connects every component together.
  */
-public class Interpreter {
+public final class Interpreter {
     private final Memory memory;
     BrainfuckParser brainfuckParser;
 
@@ -13,6 +13,7 @@ public class Interpreter {
         memory = new Memory(30000);
         brainfuckParser = new BrainfuckParser();
     }
+
     public void interpret(String brainfuckExpression) {
         List<Command> commands = brainfuckParser.parse(brainfuckExpression);
 

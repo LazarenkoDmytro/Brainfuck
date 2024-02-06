@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 /**
  * Tests the logic of the {@link LoopParser} class.
  */
-public class LoopParserTest {
+public final class LoopParserTest {
     private LoopParser loopParser;
     private String brainfuckExpression;
     private MutableInt mutableInt;

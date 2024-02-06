@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * Main class, where you can input the Brainfuck expressions from console and receive result.
  * Works, until "exit" in the input.
  */
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             String input;

@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link MovePointerRight} class.
  */
-class MovePointerRightTest {
+public final class MovePointerRightTest {
     private Memory memory;
     private MovePointerRight movePointerRight;
 

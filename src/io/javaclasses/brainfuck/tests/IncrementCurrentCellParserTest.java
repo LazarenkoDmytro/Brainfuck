@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 /**
  * Tests the logic of the {@link IncrementCurrentCellParser} class.
  */
-public class IncrementCurrentCellParserTest {
+public final class IncrementCurrentCellParserTest {
     private IncrementCurrentCellParser incrementCurrentCellParser;
     private String brainfuckExpression;
     private MutableInt mutableInt;

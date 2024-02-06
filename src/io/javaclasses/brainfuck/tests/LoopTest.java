@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link Loop} class.
  */
-public class LoopTest {
+public final class LoopTest {
     private Memory memory;
     private Loop loop;
     private MovePointerRight movePointerRight;

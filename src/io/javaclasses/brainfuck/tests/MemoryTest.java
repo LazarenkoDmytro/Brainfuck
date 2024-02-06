@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link Memory} class.
  */
-class MemoryTest {
+public final class MemoryTest {
     private Memory memory;
 
     @BeforeEach

@@ -8,7 +8,7 @@ import java.util.List;
  * Implements the {@link Parser} interface.
  * Parses the string between brackets.
  */
-public class LoopParser implements Parser {
+public final class LoopParser implements Parser {
     @Override
     public Command parse(String brainfuckExpression, MutableInt index) {
         List<Command> innerCommands = new ArrayList<>();
