@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link Interpreter} class.
  */
-public class InterpreterTest {
+public final class InterpreterTest {
     Interpreter interpreter;
 
     @BeforeEach

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 /**
  * Tests the logic of the {@link BrainfuckParser} class.
  */
-public class BrainfuckParserTest {
+public final class BrainfuckParserTest {
     private BrainfuckParser brainfuckParser;
     private String brainfuckExpression;
 

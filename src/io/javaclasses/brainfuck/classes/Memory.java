@@ -5,7 +5,7 @@ package io.javaclasses.brainfuck.classes;
  * <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>
  * programming language interpreter.
  */
-public class Memory {
+public final class Memory {
     private final byte[] cells;
 
     private int pointer = 0;

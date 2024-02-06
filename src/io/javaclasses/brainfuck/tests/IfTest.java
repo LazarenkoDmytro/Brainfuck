@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link If} class.
  */
-public class IfTest {
+public final class IfTest {
     If ifCommand;
     Memory memory;
     MovePointerRight movePointerRight;

@@ -7,7 +7,7 @@ import java.util.List;
  * Parser of the String in Brainfuck standard.
  * Extracts the Commands from the expression.
  */
-public class BrainfuckParser {
+public final class BrainfuckParser {
     private final ParserManager parserManager = new ParserManager();
 
     public List<Command> parse(String brainfuckExpression) {

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Tests the logic of the {@link ParserManager} class.
  */
-public class ParserManagerTest {
+public final class ParserManagerTest {
     ParserManager parserManager;
 
     @BeforeEach

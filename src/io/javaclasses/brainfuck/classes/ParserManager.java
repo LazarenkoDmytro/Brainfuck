@@ -6,7 +6,7 @@ import java.util.HashMap;
  * A manager of Parser.
  * Defines the parser type by its character.
  */
-public class ParserManager {
+public final class ParserManager {
     private final HashMap<Character, Parser> parsersByCharacters = new HashMap<>() {
         {
             put('>', new MovePointerRightParser());

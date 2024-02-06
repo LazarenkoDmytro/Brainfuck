@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link PrintCurrentCell} class.
  */
-class PrintCurrentCellTest {
+public final class PrintCurrentCellTest {
     private Memory memory;
     private IncrementCurrentCell incrementCurrentCell;
     private PrintCurrentCell printCurrentCell;

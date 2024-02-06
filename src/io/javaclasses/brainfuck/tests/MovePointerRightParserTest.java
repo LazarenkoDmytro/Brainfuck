@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 /**
  * Tests the logic of the {@link MovePointerRightParser} class.
  */
-public class MovePointerRightParserTest {
+public final class MovePointerRightParserTest {
     private MovePointerRightParser movePointerRightParser;
     private String brainfuckExpression;
     private MutableInt mutableInt;

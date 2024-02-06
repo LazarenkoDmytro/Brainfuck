@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the logic of the {@link MutableInt} class.
  */
-public class MutableIntTest {
+public final class MutableIntTest {
     private MutableInt mutableInt;
 
     @BeforeEach

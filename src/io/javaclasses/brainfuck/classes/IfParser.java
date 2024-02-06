@@ -8,7 +8,7 @@ import java.util.List;
  * Implements the {@link Parser} interface.
  * Parses the string between curly braces.
  */
-public class IfParser implements Parser {
+public final class IfParser implements Parser {
     @Override
     public Command parse(String brainfuckExpression, MutableInt index) {
         List<Command> innerCommands = new ArrayList<>();

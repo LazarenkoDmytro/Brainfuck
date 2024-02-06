@@ -4,7 +4,7 @@ package io.javaclasses.brainfuck.classes;
  * A mutable wrapper of int primitive.
  * Used to pass the int value as a reference.
  */
-public class MutableInt {
+public final class MutableInt {
     private int value;
 
     public MutableInt(int value) {

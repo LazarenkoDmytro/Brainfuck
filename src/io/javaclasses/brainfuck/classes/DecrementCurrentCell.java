@@ -5,7 +5,7 @@ package io.javaclasses.brainfuck.classes;
  * Implements the {@link Command} interface.
  * Decrements the value of the current cell in the memory.
  */
-public class DecrementCurrentCell implements Command {
+public final class DecrementCurrentCell implements Command {
     @Override
     public void execute(Memory memory) {
         memory.decrementCurrentCell();
