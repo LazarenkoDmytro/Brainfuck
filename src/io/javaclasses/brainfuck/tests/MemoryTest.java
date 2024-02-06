@@ -65,7 +65,12 @@ class MemoryTest {
 
     @Test
     void testPrintCurrentCell() {
+        for (byte i = 0; i < 'A'; i++) {
+            memory.incrementCurrentCell();
+        }
+        memory.printCurrentCell(); // 'A' expected in the console
+
         memory.incrementCurrentCell();
-        memory.printCurrentCell(); // 'A' expected
+        memory.printCurrentCell(); // 'B' expected in the console
     }
 }
