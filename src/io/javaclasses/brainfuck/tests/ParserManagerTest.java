@@ -24,7 +24,10 @@ public final class ParserManagerTest {
         assertInstanceOf(IncrementCurrentCellParser.class, parserManager.parser('+'));
         assertInstanceOf(DecrementCurrentCellParser.class, parserManager.parser('-'));
         assertInstanceOf(PrintCurrentCellParser.class, parserManager.parser('.'));
-        assertInstanceOf(LoopParser.class, parserManager.parser('['));
-        assertThrowsExactly(IllegalArgumentException.class, () -> parserManager.parser(']'));
+        assertInstanceOf(LoopOpenParser.class, parserManager.parser('['));
+        assertInstanceOf(LoopCloseParser.class, parserManager.parser(']'));
+        assertInstanceOf(IfOpenParser.class, parserManager.parser('{'));
+        assertInstanceOf(IfCloseParser.class, parserManager.parser('}'));
+        assertThrowsExactly(IllegalArgumentException.class, () -> parserManager.parser(' '));
     }
 }

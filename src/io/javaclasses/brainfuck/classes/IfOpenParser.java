@@ -6,11 +6,11 @@ import java.util.Stack;
 /**
  * A parser of the interpreter.
  * Implements the {@link Parser} interface.
- * Parses the IncrementCurrentCell symbol.
+ * Parses the IfOpen symbol.
  */
-public final class IncrementCurrentCellParser implements Parser {
+public final class IfOpenParser implements Parser {
     @Override
     public void parse(List<Command> finalCommands, Stack<CompositeCommand> compositeCommands) {
-        CommandUpdater.updateCommands(finalCommands, compositeCommands, new IncrementCurrentCell());
+        compositeCommands.push(new If());
     }
 }

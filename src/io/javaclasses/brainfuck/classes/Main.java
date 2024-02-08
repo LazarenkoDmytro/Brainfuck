@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 /**
  * Main class, where you can input the Brainfuck expressions from console and receive result.
- * Works, until "exit" in the input.
+ * Works, until "exit" is entered.
  */
 public final class Main {
     public static void main(String[] args) {

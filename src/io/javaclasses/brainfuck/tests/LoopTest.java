@@ -5,9 +5,6 @@ import io.javaclasses.brainfuck.classes.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -22,27 +19,25 @@ public final class LoopTest {
     @BeforeEach
     void setUp() {
         memory = new Memory(10);
+        loop = new Loop();
 
-        List<Command> innerCommands = new ArrayList<>();
-
-        innerCommands.add(new DecrementCurrentCell());
-        innerCommands.add(new MovePointerRight());
+        loop.addInnerCommand(new DecrementCurrentCell());
+        loop.addInnerCommand(new MovePointerRight());
 
         for (int i = 0; i < 2; i++) {
-            innerCommands.add(new IncrementCurrentCell());
+            loop.addInnerCommand(new IncrementCurrentCell());
         }
 
-        innerCommands.add(new MovePointerRight());
+        loop.addInnerCommand(new MovePointerRight());
 
         for (int i = 0; i < 3; i++) {
-            innerCommands.add(new IncrementCurrentCell());
+            loop.addInnerCommand(new IncrementCurrentCell());
         }
 
         for (int i = 0; i < 2; i++) {
-            innerCommands.add(new MovePointerLeft());
+            loop.addInnerCommand(new MovePointerLeft());
         }
 
-        loop = new Loop(innerCommands);
         movePointerRight = new MovePointerRight();
         incrementCurrentCell = new IncrementCurrentCell();
     }

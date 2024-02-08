@@ -19,25 +19,29 @@ public final class BrainfuckParserTest {
     @BeforeEach
     void setUp() {
         brainfuckParser = new BrainfuckParser();
-        brainfuckExpression = "><+-.[><+-.]";
+        brainfuckExpression = "><+-.[><+-.]{><+-.}";
     }
 
     @Test
     void testParse() {
         List<Command> commands = brainfuckParser.parse(brainfuckExpression);
 
-        assertEquals(6, commands.size());
+        assertEquals(7, commands.size());
 
         testCommands(commands);
+
         assertInstanceOf(Loop.class, commands.get(5));
-
         Loop loop = (Loop) commands.get(5);
-        List<Command> innerCommands = loop.innerCommands();
+        List<Command> loopInnerCommands = loop.innerCommands();
+        testCommands(loopInnerCommands);
 
-        testCommands(innerCommands);
+        assertInstanceOf(If.class, commands.get(6));
+        If ifCommand = (If) commands.get(6);
+        List<Command> ifInnerCommands = ifCommand.innerCommands();
+        testCommands(ifInnerCommands);
     }
 
-    static void testCommands(List<Command> commands) {
+    private void testCommands(List<Command> commands) {
         assertInstanceOf(MovePointerRight.class, commands.get(0));
         assertInstanceOf(MovePointerLeft.class, commands.get(1));
         assertInstanceOf(IncrementCurrentCell.class, commands.get(2));
