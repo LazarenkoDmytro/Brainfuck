@@ -2,6 +2,7 @@ package io.javaclasses.brainfuck.classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Parser of the String in Brainfuck standard.
@@ -11,15 +12,17 @@ public final class BrainfuckParser {
     private final ParserManager parserManager = new ParserManager();
 
     public List<Command> parse(String brainfuckExpression) {
-        List<Command> commands = new ArrayList<>();
-        for (MutableInt index = new MutableInt(0); index.value() < brainfuckExpression.length(); index.increment()) {
-            char currentCharacter = brainfuckExpression.charAt(index.value());
+        List<Command> finalCommands = new ArrayList<>();
+        Stack<CompositeCommand> compositeCommands = new Stack<>();
+
+        for (int i = 0; i < brainfuckExpression.length(); i++) {
+            char currentCharacter = brainfuckExpression.charAt(i);
             Parser parser = parserManager.parser(currentCharacter);
 
-            Command command = parser.parse(brainfuckExpression, index);
-            commands.add(command);
+            parser.parse(finalCommands, compositeCommands);
         }
 
-        return commands;
+        assert (compositeCommands.empty());
+        return finalCommands;
     }
 }

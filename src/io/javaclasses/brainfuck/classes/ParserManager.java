@@ -14,8 +14,10 @@ public final class ParserManager {
             put('+', new IncrementCurrentCellParser());
             put('-', new DecrementCurrentCellParser());
             put('.', new PrintCurrentCellParser());
-            put('[', new LoopParser());
-            put('{', new IfParser());
+            put('[', new LoopOpenParser());
+            put(']', new LoopCloseParser());
+            put('{', new IfOpenParser());
+            put('}', new IfCloseParser());
         }
     };
 

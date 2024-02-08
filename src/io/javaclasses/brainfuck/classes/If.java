@@ -1,15 +1,18 @@
 package io.javaclasses.brainfuck.classes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A command of the interpreter.
- * Implements the {@link Command} interface.
+ * A composite command of the interpreter.
+ * Implements the {@link CompositeCommand} interface.
  * Executes a series of commands once.
  */
-public record If(List<Command> innerCommands) implements Command {
-    public If {
-        assert (innerCommands != null && !innerCommands.isEmpty());
+public final class If implements CompositeCommand {
+    private final List<Command> innerCommands;
+
+    public If() {
+        innerCommands = new ArrayList<>();
     }
 
     @Override
@@ -19,5 +22,14 @@ public record If(List<Command> innerCommands) implements Command {
                 command.execute(memory);
             }
         }
+    }
+
+    @Override
+    public void addInnerCommand(Command command) {
+        innerCommands.add(command);
+    }
+
+    public List<Command> innerCommands() {
+        return new ArrayList<>(innerCommands);
     }
 }

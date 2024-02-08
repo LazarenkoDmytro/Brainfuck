@@ -4,9 +4,6 @@ import io.javaclasses.brainfuck.classes.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -19,26 +16,25 @@ public final class IfTest {
 
     @BeforeEach
     void setUp() {
+        ifCommand = new If();
         memory = new Memory(10);
 
-        List<Command> innerCommands = new ArrayList<>();
-
         for (int i = 0; i < 3; i++) {
-            innerCommands.add(new IncrementCurrentCell());
+            ifCommand.addInnerCommand(new IncrementCurrentCell());
         }
 
-        innerCommands.add(new MovePointerRight());
+        ifCommand.addInnerCommand(new MovePointerRight());
 
         for (int i = 0; i < 4; i++) {
-            innerCommands.add(new IncrementCurrentCell());
+            ifCommand.addInnerCommand(new IncrementCurrentCell());
         }
 
         for (int i = 0; i < 2; i++) {
-            innerCommands.add(new MovePointerLeft());
+            ifCommand.addInnerCommand(new MovePointerLeft());
         }
 
         movePointerRight = new MovePointerRight();
-        ifCommand = new If(innerCommands);
+
     }
 
     @Test

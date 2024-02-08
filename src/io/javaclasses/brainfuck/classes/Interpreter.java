@@ -3,7 +3,7 @@ package io.javaclasses.brainfuck.classes;
 import java.util.List;
 
 /**
- * The general structure, that connects every component together.
+ * The general structure, that connects all the components together.
  */
 public final class Interpreter {
     private final Memory memory;

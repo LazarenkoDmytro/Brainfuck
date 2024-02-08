@@ -1,5 +1,8 @@
 package io.javaclasses.brainfuck.classes;
 
+import java.util.List;
+import java.util.Stack;
+
 /**
  * A parser of the interpreter.
  * Implements the {@link Parser} interface.
@@ -7,7 +10,7 @@ package io.javaclasses.brainfuck.classes;
  */
 public final class DecrementCurrentCellParser implements Parser {
     @Override
-    public Command parse(String brainfuckExpression, MutableInt index) {
-        return new DecrementCurrentCell();
+    public void parse(List<Command> finalCommands, Stack<CompositeCommand> compositeCommands) {
+        CommandUpdater.updateCommands(finalCommands, compositeCommands, new DecrementCurrentCell());
     }
 }
